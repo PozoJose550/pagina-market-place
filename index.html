@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestor Top Publicaciones Lavadoras</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Gestor Top Publicaciones Lavadoras</h1>
+
+    <form id="formulario" autocomplete="off">
+      <label for="nombrePub">Nombre para la publicación <span class="required">*</span></label>
+      <input
+        type="text"
+        id="nombrePub"
+        name="nombrePub"
+        placeholder="Ej: Lavadora Blanca"
+        required
+      />
+
+      <label for="titulo">Título <span class="required">*</span></label>
+      <input
+        type="text"
+        id="titulo"
+        name="titulo"
+        placeholder="Ej: Lavadora Samsung 10kg, casi nueva"
+        required
+      />
+
+      <label for="precio">Precio <span class="required">*</span></label>
+      <input type="text" id="precio" name="precio" placeholder="Ej: $250" required />
+
+      <label for="descripcion">Descripción <span class="required">*</span></label>
+      <textarea
+        id="descripcion"
+        name="descripcion"
+        rows="4"
+        placeholder="Ej: Lavadora en excelente estado, funciona perfecto..."
+        required
+      ></textarea>
+
+      <label for="imagenes">Selecciona imágenes (opcional)</label>
+      <input type="file" id="imagenes" name="imagenes" accept="image/*" multiple style="display:none" />
+      <button type="button" id="boton-select-img" class="btn-primario">
+        Seleccionar imágenes
+      </button>
+
+      <div id="preview-imagenes" class="preview-container"></div>
+
+      <button type="submit" class="btn-primario">Guardar publicación</button>
+    </form>
+
+    <section class="lista-publicaciones">
+      <h2>Publicaciones guardadas</h2>
+      <ul id="lista"></ul>
+    </section>
+
+    <section id="resultado" aria-live="polite"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
